@@ -15,7 +15,7 @@ after_success:
  - docker build -t melissabeff/multi-worker ./worker
 #log in to the docker CLI
  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
-#take thos eimages und push them to dockerhub
+#take those eimages und push them to dockerhub
  - docker push melissabeff/multi-client
  - docker push melissabeff/multi-nginx
  - docker push melissabeff/multi-server
