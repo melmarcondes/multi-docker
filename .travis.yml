@@ -9,15 +9,15 @@ script:
  - docker run mbeff/react-test npm test -- --coverage
 
 after_success:
- - docker build -t mbeff/multi-client ./client
- - docker build -t mbeff/multi-nginx ./nginx
- - docker build -t mbeff/multi-server ./server
- - docker build -t mbeff/multi-worker ./worker
+ - docker build -t melissabeff/multi-client ./client
+ - docker build -t melissabeff/multi-nginx ./nginx
+ - docker build -t melissabeff/multi-server ./server
+ - docker build -t melissabeff/multi-worker ./worker
 #log in to the docker CLI
  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
 #take thos eimages und push them to dockerhub
- - docker push mbeff/multi-client
- - docker push mbeff/multi-nginx
- - docker push mbeff/multi-server
- - docker push mbeff/multi-worker
+ - docker push melissabeff/multi-client
+ - docker push melissabeff/multi-nginx
+ - docker push melissabeff/multi-server
+ - docker push melissabeff/multi-worker
  
