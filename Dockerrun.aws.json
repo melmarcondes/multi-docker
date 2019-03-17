@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions":[
+        {
+            "name":"client",
+            "image":"melissabeff/multi-client",
+            "hostname":"client",
+            "essencial":false
+        },
+        {
+            "name":"server",
+            "image":"melissabeff/multi-server",
+            "hostname":"api",
+            "essencial":false
+        },
+        {
+            "name":"worker",
+            "image":"melissabeff/multi-worker",
+            "hostname":"worker",
+            "essencial":false
+        },
+        {
+            "name":"nginx",
+            "image":"melissabeff/multi-nginx",
+            "hostname":"nginx",
+            "essencial":true,
+            "portMappings":[
+                {
+                    "hostPort":80,
+                    "containerPort":80
+                }
+            ],
+            "links":["client","server"]
+        }             
+    ]
+}
