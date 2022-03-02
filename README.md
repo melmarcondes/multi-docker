@@ -1,2 +1,2 @@
 # multi-docker
-Udemy training  - NodeJs + NGINX
+Udemy training: NodeJs + NGINX
